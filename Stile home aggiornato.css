@@ -1,0 +1,96 @@
+* Stile base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 1. Immagine di Sfondo e Sezione Eroe */
+.hero-section {
+    /* Sostituisci 'sfondo_viaggi.jpg' con il nome del tuo file immagine */
+    /* Ho mantenuto 'NYC skyline.jpg' che hai caricato */
+    background-image: url('NYC skyline.jpg'); 
+    background-size: cover; /* Copre l'intera area */
+    background-position: center; /* Centra l'immagine */
+    height: 100vh; /* Altezza pari all'altezza della finestra del browser */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* Testo chiaro sopra l'immagine */
+    position: relative;
+    /* Assicurati che l'header non venga coperto dalla navbar fissa se presente */
+    padding-top: 80px; 
+}
+
+/* Overlay per migliorare la leggibilità del testo sopra l'immagine */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Sfondo nero semi-trasparente */
+}
+
+.hero-content {
+    z-index: 10; /* Assicura che il contenuto sia sopra l'overlay */
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.0em;
+    margin-bottom: 0.2em;
+}
+
+.hero-content p {
+    font-size: 1.2em; /* Aumentato leggermente per chiarezza */
+    margin-bottom: 1.5em; /* Aumentato per migliore spaziatura */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #ff6600; /* Arancione per l'azione */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #cc5200;
+    transform: translateY(-2px); /* Piccolo effetto al passaggio del mouse */
+}
+
+/* 2. Sezione di Introduzione */
+.introduction-section {
+    padding: 60px 20px; /* Aumentato il padding per un aspetto più pulito */
+    text-align: center;
+    background-color: #f9f9f9; /* Leggero sfondo per contrasto */
+}
+
+.introduction-section h2 {
+    color: #1a2b2c;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.introduction-section p {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* 3. Sezione Raccomandazioni - aggiunta una sezione generica */
+.recommendations-section {
+    padding: 40px 20px;
+    background-color: white;
+    min-height: 400px;
+}

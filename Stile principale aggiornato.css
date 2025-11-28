@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    /* Aligns items: Logo left, Links center (via margin), Search right */
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #1a2b2c; /* Dark, mossy green background from the screenshot */
+    /* You can add a background image pattern here if you want the subtle texture */
+    padding: 15px 40px; 
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* Rendi la navbar responsive */
+    flex-wrap: wrap; 
+}
+
+/* --- Brand/Logo Styling --- */
+.brand {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.logo-icon {
+    font-size: 2em;
+    margin-right: 5px;
+    /* Uses a bright white color for the icon */
+    color: #ffffff; 
+}
+
+/* --- Navigation Links Styling --- */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    /* Rimosso il margine fisso per centrare meglio su schermi larghi */
+    margin: 0; 
+    display: flex;
+    flex-grow: 1; /* Permette ai link di occupare spazio */
+    justify-content: center; /* Centra i link */
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    color: #ffd700; /* Gold/Yellow on hover */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Search Container Styling --- */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.search-input {
+    padding: 10px 15px;
+    border: none;
+    outline: none; /* Removes the default focus border */
+    background: transparent;
+    width: 300px;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Rimosso il pseudo-elemento ::before per l'icona di ricerca 
+   in quanto in un ambiente di hosting potrebbe non funzionare
+   bene con URL data. L'utente può usare un'icona nel div.
+   Se vuoi mantenere l'icona, assicurati che il percorso sia corretto. */
+
+.search-btn, .reset-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 5px;
+    font-size: 0.9em;
+}
+
+.search-btn {
+    background-color: #ff6600; /* Orange */
+    color: white;
+}
+
+.search-btn:hover {
+    background-color: #cc5200;
+}
+
+.reset-btn {
+    background-color: #ccc; /* Light gray */
+    color: #333;
+}
+
+.reset-btn:hover {
+    background-color: #999;
+    color: white;
+}
+
+/* --- Footer Social Links --- */
+.social-links {
+    text-align: center;
+    padding: 20px 40px;
+    background-color: #1a2b2c;
+    color: white;
+    border-top: 2px solid #3c5457;
+}
+
+.social-links h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffd700;
+}
+
+.social-links p {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+    }
+
+    .search-container {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .search-input {
+        flex-grow: 1;
+        width: auto;
+    }
+    
+    .search-btn, .reset-btn {
+        margin-left: 5px;
+        padding: 8px 10px;
+    }
+}
